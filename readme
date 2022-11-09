@@ -1,0 +1,576 @@
+Hello world using Java
+	- Every program of java starts with a class
+	- Class name should start with capital letter
+	- Class name cannot be started with a number or any other special character except _ or $
+	- Class name must be same as file name{main method class name and file name should be same}
+
+Class HelloWorld{
+    public static  void main(String[] args){
+        System.out.println("Hello, World!"); 
+    }
+}  
+
+
+CMD
+Javac filename.java	After this code has been compiled
+Java filename ram sharma	In array I will put ram at 0 index , and at 1 index put sharma
+Java filename 10 23 5	It will pass all the arguments after file name 
+
+Why java?
+	- OOPS - Object Oriented Programming language
+	- Platform independent( machine independent)
+	- It generate byte code which is machine code
+	- WORA - Write Once Run Anywhere
+	- Open Source
+	- General Purpose
+	- Compiled as well as interpreted
+	- Development/ Testing / security / networking
+
+JDK - Java Development Kit
+	- It provides java compiler
+	- It provides javadoc -java documentation
+	- It also provide JAR/ WAR/ EAR / RAR
+	- JAR - java achieved 
+	- WAR - web achieved
+	- EAR - enterprise achieved
+	- RAR - resource achieved
+JRE - Java Runtime Environment
+	- JRE is divided into 2 parts
+	- JVM - java virtual Machine
+	- Actually JVM is responsible to convert byte code to machine code 
+	- Libraries
+
+Low Level and high level language?
+
+Static used with any var or method
+Would be loaded automatically to the memory
+
+Static loads once in the memory in c++
+
+System.out.println
+
+System is a class  which is used for three things 
+System.in  -> Input Stream
+System.err  -> PrintStream
+System.out -> PrintStream
+
+Stream ?
+
+
+Capital s indicates it is a class
+What is out?
+Out is an instance of printstream class
+
+For your own commands use command line arguments
+
+
+Why main is public
+Why main is void
+Why we are passing string arr in bracket
+Why is main method
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Wrapper Classes??
+
+class hello {
+    public static void main(String[] args) {
+        byte b = 12;
+        short s = 12312;
+        int i = 12233;
+        float f = 12.5f;
+        double d = 12.5;
+        char c = 'h';
+        // Non-Primitive
+        String str = "Hello world";
+        
+        //Wrapper class
+        Integer in = 1244;
+        Float fl = 12.53f;
+        Double dl = 12.42;
+    }
+}
+
+Date - 26/09/22
+
+Data types 
+	- Primitive
+		Static memory allocation
+		1.Character 
+			Char
+		2.Numeric
+			A)Integer
+				Byte
+				Short
+				Int
+				Long
+			B)Decimal
+				Float
+				Double
+		3.Boolean
+	
+	- Non - Primitive
+		Dynamic Memory allocation
+		- String 
+		- Object
+		- array
+
+
+class hello {
+    public static void main(String[] args) {
+        int x = Integer.parseInt(args[0]);
+        int y = Integer.parseInt(args[1]);
+        int z = x + y;
+        System.out.println("Sum is : " + z);
+    }
+}
+
+To run in CLI 
+First - compile {javac filename.java}
+Then pass arguments {java filename 1 2}
+
+CMD output
+
+Microsoft Windows [Version 10.0.25206.1000]
+(c) Microsoft Corporation. All rights reserved.
+
+F:\java>javac hello.java
+
+F:\java>java hello 1 2
+Sum is : 3
+
+F:\java>
+
+
+Here , Integer is Wrapper Class 
+" . " is Used to separate package names from subpackages and classes. 
+Also used to separate a variable or method from a reference variable
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Date - 28/09/22
+
+
+Scanner
+	- Pre-defined class in java
+	- Scanner is a buffer
+Scanner is a constructor actually
+
+new is a keyword that allocate a new memory
+Followed by the name of object
+scanner.next() Finds and returns the next complete token from this scanner.
+A complete token is preceded and followed by input that matches the delimiter pattern.
+
+
+import java.util.Scanner;
+public class takinginput {
+    public static void main(String[] args) {
+        System.out.println("Enter your name: ");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.next();
+        System.out.println("Hello : " + name );
+
+
+        scanner.close();
+    }
+}
+
+
+Scanner.close closes the buffer
+
+Output:
+
+Enter your name: 
+Anshuman
+Hello : Anshuman
+PS F:\java> 
+
+How to take input in java?
+	
+============================================
+Taking Input in Java
+
+Input system.in leta hai
+It has method read which has return type integer
+It is unhandled exception
+It will throw error and jvm will handle
+public class takinginput {
+    public static void main(String[] args) throws IOException {
+        System.out.print("Enter input");
+        int name = System.in.read();
+        System.out.println("Hello : " + name);
+    }
+}
+
+Output:
+
+Enter input Anshuman
+Hello : 32
+PS F:\java> 
+
+
+Questions:
+	1. 
+
+
+import java.util.Scanner;
+public class takinginput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the input ");
+        String name = scanner.next();
+        System.out.println("Hello : " + name );
+        System.out.println("Enter your age :" );
+        byte age = scanner.nextByte();
+        System.out.println("Enter your city");
+        String city = scanner.nextLine();
+        System.out.println("Enter your salary");
+        String salary = scanner.nextLine();
+        System.out.println("Age = " + age);
+        System.out.println("city = " + city);
+        System.out.println("salary = " + salary);
+        
+        scanner.close();
+    }
+}
+
+Int name = System.in.read()
+
+
+Only read one character  and return the ASCII that would go in name;
+
+To take input of multiple character 
+Use Scanner is a kind of buffer it will take input until press the Enter 
+
+Buffer will we have /n
+And scanner will return without input 
+Scanner.nextLine();
+Takes input until /n character
+
+Enter the input
+Anshuman
+Hello : Anshuman
+Enter your age :
+2
+Enter your city
+Enter your salary
+
+Problem is the automatic city and salary came up together because the
+Is /n in the buffer that is automatic.
+Solution :
+
+import java.util.Scanner;
+public class takinginput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the input ");
+        String name = scanner.next();
+        System.out.println("Hello : " + name );
+        System.out.println("Enter your age :" );
+        byte age = scanner.nextByte();
+        scanner.nextLine();
+
+        System.out.println("Enter your city");
+        String city = scanner.nextLine();
+        System.out.println("Enter your salary");
+        String salary = scanner.nextLine();
+        System.out.println("Age = " + age);
+        System.out.println("city = " + city);
+        System.out.println("salary = " + salary);
+        
+        scanner.close();
+    }
+}
+
+
+scanner.nextLine();
+To clear the buffer 
+
+Output:
+
+Enter the input 
+Anshuman
+Hello : Anshuman
+Enter your age :
+12
+Enter your city
+mdo
+Enter your salary
+sdf
+Age = 12
+city = mdo
+salary = sdf
+PS F:\java> 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Date - 3/10/2022
+
+Loop's start
+
+If Else:
+
+
+package if_else_programs;
+import java.util.Scanner;
+public class ifelse1 {
+    public static void main(String[] args) {
+        System.out.println("Enter your age:");
+        Scanner scanner = new Scanner(System.in);
+        int age = scanner.nextInt();
+        if(age > 18){
+            System.out.println("you are eligible to vote");
+        }
+        else{
+            
+            System.out.println("You are not eligible to vote.....");
+    }
+    scanner.close();
+    }
+}
+
+Enter your age:
+12
+You are not eligible to vote.....
+PS F:\java> 
+
+
+Enter the number
+43
+you are eligible to vote
+
+===================================================================================================================
+
+Program 3
+Greatest of two
+
+
+package if_else_programs;
+import java.util.Scanner;
+public class greatestOfTwo {
+    public static void main(String[] args) {
+        System.out.println("Enter number 1");
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        System.out.println("Enter number 2");
+        int b = scanner.nextInt();
+        if ( a > b)
+            System.out.println("Number " + a + " Is greater");
+        else
+            System.out.println("Number " + b + " Is greater");
+        scanner.close();
+    }
+}
+
+
+Enter number 1
+1
+Enter number 2
+2
+Number2Is greater
+PS F:\java> 
+
+==================================================================================================================
+
+Program 4:
+Greatest of 3
+
+HomeWork
+
+==================================================================================================================
+
+Program 5:
+OddEven
+
+Study bitwise operator
+
+package if_else_programs;
+import java.util.Scanner;
+public class OddEven {
+    public static void main(String[] args) {
+        Scanner a = new Scanner(System.in);
+        System.out.println("Enter the number : ");
+        int num = a.nextInt();
+        if ((num & 1) == 1)
+            System.out.println("Number is Odd.....");
+        else
+            System.out.println("Number is Even");
+        a.close();
+    }
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Date - 10/10/2022
+
+Loop's DAY 2
+
+Loop are of two types used 
+	- For 
+	- While
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Date: 19/10/22
+
+OOPS: Object Oriented Programming
+
+Programming paradigm
+	-Procedural : C/C++ , Python , JavaScript
+	-Functional : python, JavaScript
+	-OOPS: JAVA , C++ , Python , JavaScript , C#
+	
+	Multi-paradigm:
+	Programming languages which follow more than 1 approach .
+	
+	Java can't be procedural because there Is always a class.
+	
+	Advantages of functional over other:
+	Can achieve security or say scope like public private with the function within Function.
+	Don't really have to use a wrapper.
+	
+	Class can be a used a function in functional programming.
+	
+	Functions are first class citizens.
+
+OOPS : Object Oriented Programming
+
+	- Class
+	- Object
+		1. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Class and object
+Class k andar main method main method k andar code
+Abhi thoda oops pdhna hai
+Understanding basis for data structure k liye
+
+Example code:
+
+public class Employee {
+    int EmpId;
+    // string Name;
+    int salary;
+    // strict DepId;
+public static void main(String[] args) {
+    Employee Ram = new Employee();
+    System.out.println(Ram);
+    Ram.EmpId = 101;
+    Ram.salary = 45000;
+    System.out.println(Ram.EmpId);
+    System.out.println(Ram.salary);
+}
+}
+
+Class is a non premitive data type with dynamic memory allocation
+
+Class user{
+Stirng username;
+String email;
+Long phone;
+}
+
+User obj = new user();
+Full stop( . ) is used to access the objects in class
+
+Obj is a reference variable…..object ko refer krega obj ka naam se
+
+Left wala user is the data type 
+Just like int x = 20;
+
+New is a keyword construct the new memory to the obj in the heap memory
+
+Right user(); hai constructor 
+Constructor banayega new object 
+
+
+SOLID
+D	DRY	Do not Repeat Yourself
+I		
+
+Don't repeat yourself
+DRY principle
+
+
+package OOPs;
+public class Employee2 {
+    int empId;
+    String name;
+    double salary;
+    String department;
+    public void showemp(){
+        //this = refers to current object
+        System.out.println("ID: " + this.empId);
+        System.out.println("Name: " + this.name);
+        System.out.println("Salary: " + this.salary);
+        System.out.println("Department: " + this.department);
+    }
+    public static void main(String[] args) {
+        Employee2 Ram = new Employee2();
+        Employee2 shyam = new Employee2();
+        Ram.empId = 101;
+        Ram.name = "Anshuman";
+        Ram.salary = 45000;
+        Ram.department = "CSE";
+        shyam.empId = 102;
+        shyam.salary = 55000;
+        shyam.name = "Akshit";
+        shyam.department = "CSE"; 
+        
+        Ram.showemp();
+        shyam.showemp();
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DSA: flow is
+Recursion and back tracking after that array and all yay!!
+
+Pre-requisite:
+	1. Call stack
+	----It is a stack that contains the function according to the function called….
+	Compiler maintain the call stack can be learned through the breakpoints and the debugging.
+	2. How local variables are initialized in memory 
+	-----To discuss
+	3. How return statement work
+	-----function terminate where function return
+	-----return the  values 
+
+Process calling itself is called recursion.
+When we have to break a large problem into small problem and then solve smaller instance of same problem.
+
+Every recursion program contains 3 parts
+-Base Case (Termination case)
+-Small problem
+-Processing logic
+
+Homework:
+Recursion:
+Power calculate(with return and void method)      
+Sum of digit(with return and void method)
+Armstrong number(with return and void method)
+Prime number(with return and void method)
+One to n Armstrong(with return and void method)
+1 to n prime number (with return and void method)
+Print dight 12345(with return and void method)
+Zero in digit(with return and void method)
+At least 10 pattern problem
+
+Sine wave:
+
+Print left to right or top to bottom that's it
+
+
+PRINCIPAL'S
+ 1 given big problem
+2 small problem
+3 cycle (recursion)
+4 processing logic
+5 brake/ termination case
