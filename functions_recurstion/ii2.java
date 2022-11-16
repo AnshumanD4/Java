@@ -28,6 +28,7 @@ public class ii2 {
 	int start = input.nextInt();
 	System.out.println("Enter end: ");
 	int end = input.nextInt();
+	input.close();
 	ii2 A=new ii2();
 	double arm;
 	System.out.printf("Armstrong numbers between 1 to %d",end);
@@ -38,6 +39,5 @@ public class ii2 {
 	if(arm==start)
 	      System.out.println(start);
 	}
-	input.close();
 	}
 }
