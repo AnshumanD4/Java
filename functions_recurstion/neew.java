@@ -1,21 +1,20 @@
 package functions_recurstion;
 
 public class neew {
+    static String output = "";
     public static void main(String[] args) {
-        String str = "xyxxyyx";
-        str = replace(str, 0);
-        System.out.println(str);
+        String s = "xyxxyyx";
+        replace(s, 0);
+        System.out.println(output);
     }
-    static String replace (String str, int i){
-        if(i == str.length()){
+    static String replace (String s, int i){
+        output = output + s.charAt(i);
+        if(i == s.length()-1){
             return "";
         }
-        if(str.charAt(i) == str.charAt(i+1)){
-            System.out.println("you are right");
-            return null;
+        if(s.charAt(i)==s.charAt(i+1)){
+           output = output + "*" ;
         }
-        else{
-            return str.charAt(i) + replace(str, i+1);
-        }
+        return replace(s, i+1);
     }
 }
