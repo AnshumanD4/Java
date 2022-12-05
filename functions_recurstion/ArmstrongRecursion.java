@@ -1,4 +1,3 @@
-package functions_recurstion;
 class ArmstrongRecursion
 {
 	int x;

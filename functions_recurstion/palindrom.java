@@ -8,5 +8,6 @@ public class palindrom {
         if(s.charAt(0) == s.charAt(s.length()-1)){
             return ispalindrom(s.substring(1));
         }
+        return false;
     }
 }

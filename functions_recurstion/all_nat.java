@@ -1,4 +1,4 @@
-package functions_recurstion;
+
 import java.util.Scanner;
 
 public class all_nat{

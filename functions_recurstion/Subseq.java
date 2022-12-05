@@ -5,7 +5,6 @@ public class Subseq {
     if(str.length()==0){
         ArrayList<String> empArrayList=new ArrayList<>();
         empArrayList.add("");
-
         return empArrayList;
     }
     char currentChar=str.charAt(0);
@@ -17,14 +16,10 @@ public class Subseq {
         result.add(currentChar+s);
     }
     return result;
-
-        
     }
     public static void main(String[] args) {
-        String str="abc";
+    String str="123";
     ArrayList<String> list =subSeq(str);
     System.out.println(list);
-
-    }
-    
+    } 
 }
